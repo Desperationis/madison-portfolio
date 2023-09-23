@@ -18,7 +18,7 @@ Production version is viewable [here](https://plantmonster.net/art-portfolio/).
 }
 ```
 
-* Copy `config.json.placeholder` into `config.json`
+* Copy `config.json.placeholder` into `config.json` and change the art folder
 * Change `plantmonster.net` specific urls to whatever your webserver uses
 	* Yes, I'm that lazy
 * Run generate.py
