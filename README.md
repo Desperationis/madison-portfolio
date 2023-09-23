@@ -22,7 +22,7 @@ Production version is viewable [here](https://plantmonster.net/art-portfolio/).
 * Change `plantmonster.net` specific urls to whatever your webserver uses
 	* Yes, I'm that lazy
 * Run generate.py
-* Copy files all `*.png`, `*.css`, `*.html`, and `pieces/*` files to a web accessible folder
+* Copy all `*.png`, `*.css`, `*.html`, and `pieces/*` files into a web accessible folder
 * I automated my deployments like so:
 
 ```
