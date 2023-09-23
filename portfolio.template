@@ -10,8 +10,8 @@
 		<div class="lightbox-gallery">
 			<div class="container">
 				<div class="intro">
-					<h2 class="text-center">Art portfolio</h2>
-					<p class="text-center">I started practising art in 2023. This is a gallery showing my progress.</p>
+					<h2 class="text-center">Jesse Kaukonen - Art Portfolio</h2>
+                    <p class="text-center">I started practising art in 2023. This is a gallery showing my progress. For my non-art work, see my <a href="https://jessekaukonen.net">professional software portfolio</a>.</p>
 				</div>
 				<div class="row photos">
 					REPLACE_GALLERY

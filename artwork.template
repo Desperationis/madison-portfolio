@@ -3,24 +3,26 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Jesse Kaukonen - Art portfolio</title>
-		<link href="../artwork.css" rel="stylesheet">
+		<link href="/artwork.css" rel="stylesheet">
 	</head>
 	<body>
-<div class="lightbox-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">REPLACE_TITLE</h2>
-            <h2 class="text-center">REPLACE_DATE</h2>
+		<div id="nav">
+			<p><a href="/">Show whole gallery</a></p>
 		</div>
-		<div id="description">
-			<p class="text-center">REPLACE_DESCRIPTION</p>
-			<p>Click image for full resolution</p>
-			<p><a href="../">Back to gallery</a></p>
-        </div>
-        <div>
+		<div class="lightbox-gallery">
+			<div class="container">
+				<div class="intro">
+					<h2 class="text-center">REPLACE_TITLE</h2>
+					<h2 class="text-center">REPLACE_DATE</h2>
+				</div>
+				<div id="description">
+					<p class="text-center">REPLACE_DESCRIPTION</p>
+				</div>
+			<div>
 			REPLACE_DATA
-        </div>
-    </div>
-</div>
+		</div>
+		<div id="footer">
+			REPLACE_LICENSE
+		</div>
 	</body>
 </html>

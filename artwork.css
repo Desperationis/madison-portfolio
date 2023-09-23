@@ -1,6 +1,11 @@
 img {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 600px;
+    max-height: 900px;
+}
+
+.licenseimage {
+    max-width: 200;
+    max-height: 50px;
 }
 
 #description {

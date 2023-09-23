@@ -47,7 +47,7 @@ def parseFile(f):
 
 def formEntry(d):
 	# Form html for gallery page
-	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://plantmonster.net/art-portfolio/pieces/'
+	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://art.plantmonster.net/pieces/'
 	html1 += str(d["id"]) + '.html"'
 	html1 += 'data-lightbox="photos"><img class="img-fluid" src="'
 	html1 += 'https://plantmonster.net/art/' + d["filename"] + '"></a></div>\n'
@@ -55,10 +55,12 @@ def formEntry(d):
 
 	# Form html for artwork's own page
 	html2 = '<p>Art #' + str(d["id"]) + ' - ' + str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']) + '</p>\n'
+
 	if 'info' in d:
 		# select fields
 		html2 += '<p>' + d['info']['description'] + '</p>\n'
 		html2 += '</p>\n'
+
 	d["html2"] = html2
 
 # Writes the main gallery view HTML document
@@ -87,13 +89,24 @@ def writePiecePage(d):
 
 	html = html.replace('REPLACE_TITLE', 'Art piece #' + str(d["id"]))
 	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
+
+	license = '<p>This work is licensed under a</p> <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a></p>'
+	license += '<img class="licenseimage" id="license" src="/by-nc.png"></img>'
+
 	if 'info' in d:
 		html = html.replace('REPLACE_DESCRIPTION', d['info']['description'])
+		if 'license' in d['info']:
+			if d['info']['license'] == "copyleft":
+				pass
+			elif d['info']['license'] == "copyright":
+				license= '<p>Copyright &copy; ' + str(d['year']) + ' Jesse Kaukonen / Farstrider Oy. All rights reserved.</p>'
 	else:
 		html = html.replace('REPLACE_DESCRIPTION', '')
 
+	html = html.replace('REPLACE_LICENSE', license)
+
 	link = 'https://plantmonster.net/art/' + d['filename']
-	html = html.replace('REPLACE_DATA', '<a href="' + link + '"/a><img src="' + link + '"></img>')
+	html = html.replace('REPLACE_DATA', '<a href="' + link + '"><img src="' + link + '"></img></a>')
 
 	f = open(fname, 'w')
 	f.write(html)
