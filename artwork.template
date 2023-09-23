@@ -23,8 +23,8 @@
 		</div>
         <footer class="text-center text-lg-start bg-white text-muted">
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                <p>Source code for this gallery is available at <a href="https://github.com/SirDifferential/art-portfolio">https://github.com/SirDifferential/art-portfolio</a></p>
-			REPLACE_LICENSE
+				<p>Artwork license</p>
+				REPLACE_LICENSE
 			</div>
         </footer>
 	</body>
