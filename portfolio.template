@@ -7,16 +7,16 @@
 		<link href="lightbox.css" rel="stylesheet">
 	</head>
 	<body>
-<div class="lightbox-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Art portfolio</h2>
-            <p class="text-center">I started practising art in 2023. This is a gallery showing my progress.</p>
-        </div>
-        <div class="row photos">
-			REPLACE_GALLERY
-        </div>
-    </div>
-</div>
+		<div class="lightbox-gallery">
+			<div class="container">
+				<div class="intro">
+					<h2 class="text-center">Art portfolio</h2>
+					<p class="text-center">I started practising art in 2023. This is a gallery showing my progress.</p>
+				</div>
+				<div class="row photos">
+					REPLACE_GALLERY
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

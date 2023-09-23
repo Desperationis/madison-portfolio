@@ -5,6 +5,7 @@
 		<title>Jesse Kaukonen - Art portfolio</title>
 		<link href="bootstrap.min.css" rel="stylesheet">
 		<link href="lightbox.css" rel="stylesheet">
+		<link href="../artwork.css" rel="stylesheet">
 	</head>
 	<body>
 <div class="lightbox-gallery">
@@ -12,8 +13,10 @@
         <div class="intro">
             <h2 class="text-center">REPLACE_TITLE</h2>
             <h2 class="text-center">REPLACE_DATE</h2>
-            <p class="text-center">REPLACE_DESCRIPTION</p>
-            <p class="text-center">REPLACE_REFERENCE</p>
+		</div>
+		<div id="description">
+			<p class="text-center">REPLACE_DESCRIPTION</p>		
+			<p>Click image for full resolution</p>
         </div>
         <div>
 			REPLACE_DATA

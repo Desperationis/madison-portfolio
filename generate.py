@@ -58,11 +58,6 @@ def formEntry(d):
 	if 'info' in d:
 		# select fields
 		html2 += '<p>' + d['info']['description'] + '</p>\n'
-		html2 += '<p>Reference used:'
-		if d['info']['reference'] == True:
-			html2 += "Yes"
-		else:
-			html2 += "No"
 		html2 += '</p>\n'
 	d["html2"] = html2
 
@@ -94,15 +89,11 @@ def writePiecePage(d):
 	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
 	if 'info' in d:
 		html = html.replace('REPLACE_DESCRIPTION', d['info']['description'])
-		if d['info']['reference'] == True:
-			html = html.replace('REPLACE_REFERENCE', 'References were used')
-		else:
-			html = html.replace('REPLACE_REFERENCE', 'No references were used')
 	else:
 		html = html.replace('REPLACE_DESCRIPTION', '')
-		html = html.replace('REPLACE_REFERENCE', '')
 
-	html = html.replace('REPLACE_DATA', '<img src="https://plantmonster.net/art/' + d['filename'] + '"></img>')
+	link = 'https://plantmonster.net/art/' + d['filename']
+	html = html.replace('REPLACE_DATA', '<a href="' + link + '"/a><img src="' + link + '"></img>')
 
 	f = open(fname, 'w')
 	f.write(html)
