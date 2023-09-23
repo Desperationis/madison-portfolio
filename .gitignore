@@ -4,3 +4,4 @@ config.json
 *.jpg
 *.html
 generate.sh
+art-portfolio.log

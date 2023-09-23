@@ -98,7 +98,6 @@ def writePiecePage(d):
 	f = open(fname, 'w')
 	f.write(html)
 	f.close()
-	print('Wrote ' + fname)
 
 parsedFiles = []
 for f in list2:
