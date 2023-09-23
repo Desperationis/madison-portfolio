@@ -90,7 +90,7 @@ def writePiecePage(d):
 	html = html.replace('REPLACE_TITLE', 'Art piece #' + str(d["id"]))
 	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
 
-	license = '<p>This work is licensed under a</p> <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a></p>'
+	license = '<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a></p>'
 	license += '<img class="licenseimage" id="license" src="/by-nc.png"></img>'
 
 	if 'info' in d:
