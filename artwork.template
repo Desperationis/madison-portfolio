@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Jesse Kaukonen - Art portfolio</title>
+		<link href="bootstrap.min.css" rel="stylesheet">
+		<link href="lightbox.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="lightbox-gallery">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">REPLACE_TITLE</h2>
+            <h2 class="text-center">REPLACE_DATE</h2>
+            <p class="text-center">REPLACE_DESCRIPTION</p>
+            <p class="text-center">REPLACE_REFERENCE</p>
+        </div>
+        <div>
+			REPLACE_DATA
+        </div>
+    </div>
+</div>
+	</body>
+</html>

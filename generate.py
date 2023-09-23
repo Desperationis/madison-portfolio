@@ -47,7 +47,7 @@ def parseFile(f):
 
 def formEntry(d):
 	# Form html for gallery page
-	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://plantmonster.net/art-portfolio/works/'
+	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://plantmonster.net/art-portfolio/pieces/'
 	html1 += str(d["id"]) + '.html"'
 	html1 += 'data-lightbox="photos"><img class="img-fluid" src="'
 	html1 += 'https://plantmonster.net/art/' + d["filename"] + '"></a></div>\n'
@@ -66,6 +66,7 @@ def formEntry(d):
 		html2 += '</p>\n'
 	d["html2"] = html2
 
+# Writes the main gallery view HTML document
 def writeGalleryPage(data):
 	f = open('portfolio.template', 'r')
 	html = f.read()
@@ -81,6 +82,33 @@ def writeGalleryPage(data):
 	f.write(html)
 	f.close()
 
+# Writes a new HTML document for one specific artwork
+def writePiecePage(d):
+	fname = 'pieces/' + str(d['id']) + '.html'
+
+	f = open('artwork.template', 'r')
+	html = f.read()
+	f.close()
+
+	html = html.replace('REPLACE_TITLE', 'Art piece #' + str(d["id"]))
+	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
+	if 'info' in d:
+		html = html.replace('REPLACE_DESCRIPTION', d['info']['description'])
+		if d['info']['reference'] == True:
+			html = html.replace('REPLACE_REFERENCE', 'References were used')
+		else:
+			html = html.replace('REPLACE_REFERENCE', 'No references were used')
+	else:
+		html = html.replace('REPLACE_DESCRIPTION', '')
+		html = html.replace('REPLACE_REFERENCE', '')
+
+	html = html.replace('REPLACE_DATA', '<img src="https://plantmonster.net/art/' + d['filename'] + '"></img>')
+
+	f = open(fname, 'w')
+	f.write(html)
+	f.close()
+	print('Wrote ' + fname)
+
 parsedFiles = []
 for f in list2:
 	d = parseFile(f)
@@ -91,5 +119,6 @@ for f in parsedFiles:
 	formEntry(f)
 
 parsedFiles.sort(key=lambda it: it["id"], reverse=True)
-
 writeGalleryPage(parsedFiles)
+for d in parsedFiles:
+	writePiecePage(d)
