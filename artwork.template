@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Jesse Kaukonen - Art portfolio</title>
 		<link href="/artwork.css" rel="stylesheet">
+		<meta property="og:image" content="REPLACE_OG_IMAGE" />
 	</head>
 	<body>
 		<div id="nav">

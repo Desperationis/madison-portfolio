@@ -106,6 +106,7 @@ def writePiecePage(d):
 
 	link = 'https://plantmonster.net/art/' + d['filename']
 	html = html.replace('REPLACE_DATA', '<a href="' + link + '"><img src="' + link + '"></img></a>')
+	html = html.replace('REPLACE_OG_IMAGE', link)
 
 	f = open(fname, 'w')
 	f.write(html)
