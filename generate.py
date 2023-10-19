@@ -87,10 +87,9 @@ def writePiecePage(d):
 	html = f.read()
 	f.close()
 
-	html = html.replace('REPLACE_TITLE', 'Art piece #' + str(d["id"]))
-	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
-
 	license = '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.'
+
+	title_extra = ""
 
 	if 'info' in d:
 		html = html.replace('REPLACE_DESCRIPTION', d['info']['description'])
@@ -99,10 +98,18 @@ def writePiecePage(d):
 				pass
 			elif d['info']['license'] == "copyright":
 				license= '<p>Copyright &copy; ' + str(d['year']) + ' Jesse Kaukonen / Farstrider Oy. All rights reserved.</p>'
+		if 'title' in d['info']:
+			title_extra = d['info']['title']
 	else:
 		html = html.replace('REPLACE_DESCRIPTION', '')
 
 	html = html.replace('REPLACE_LICENSE', license)
+	title_str = 'Art piece #' + str(d["id"])
+	if len(title_extra) > 0:
+		title_str = title_str + ": " + title_extra
+
+	html = html.replace('REPLACE_TITLE', title_str)
+	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
 
 	link = 'https://plantmonster.net/art/' + d['filename']
 	html = html.replace('REPLACE_DATA', '<a href="' + link + '"><img src="' + link + '"></img></a>')
