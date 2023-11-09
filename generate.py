@@ -92,7 +92,8 @@ def writePiecePage(d):
 	title_extra = ""
 
 	if 'info' in d:
-		html = html.replace('REPLACE_DESCRIPTION', d['info']['description'])
+		desc = d['info']['description'].replace("\n", "</br>")
+		html = html.replace('REPLACE_DESCRIPTION', desc)
 		if 'license' in d['info']:
 			if d['info']['license'] == "copyleft":
 				pass
