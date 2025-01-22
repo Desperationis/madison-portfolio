@@ -53,16 +53,6 @@ def formEntry(d):
 	html1 += 'https://plantmonster.net/art/' + d["filename"] + '"></a></div>\n'
 	d["html1"] = html1
 
-	# Form html for artwork's own page
-	html2 = '<p>Art #' + str(d["id"]) + ' - ' + str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']) + '</p>\n'
-
-	if 'info' in d:
-		# select fields
-		html2 += '<p>' + d['info']['description'] + '</p>\n'
-		html2 += '</p>\n'
-
-	d["html2"] = html2
-
 # Writes the main gallery view HTML document
 def writeGalleryPage(data):
 	f = open('portfolio.template', 'r')
@@ -90,10 +80,17 @@ def writePiecePage(d):
 	license = '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.'
 
 	title_extra = ""
+	extra_images = ""
+	url_prefix = "https://plantmonster.net/art/"
 
 	if 'info' in d:
 		desc = d['info']['description'].replace("\n", "</br>")
 		html = html.replace('REPLACE_DESCRIPTION', desc)
+		if 'extra_images' in d['info']:
+			extra = d['info']['extra_images']
+			if isinstance(extra, list):
+				for img in extra:
+					extra_images += '<a href="' + url_prefix + img + '"><img src="' + url_prefix + img + '"/></a>'
 		if 'license' in d['info']:
 			if d['info']['license'] == "copyleft":
 				pass
@@ -112,9 +109,10 @@ def writePiecePage(d):
 	html = html.replace('REPLACE_TITLE', title_str)
 	html = html.replace('REPLACE_DATE', str(d['dom']) + '.' + str(d['mon']) + '.' + str(d['year']))
 
-	link = 'https://plantmonster.net/art/' + d['filename']
-	html = html.replace('REPLACE_DATA', '<a href="' + link + '"><img src="' + link + '"></img></a>')
+	link = url_prefix + d['filename']
+	html = html.replace('REPLACE_DATA', '<a href="' + link + '"><img src="' + link + '"/></a>')
 	html = html.replace('REPLACE_OG_IMAGE', link)
+	html = html.replace('REPLACE_EXTRA_IMAGES', extra_images)
 
 	f = open(fname, 'w')
 	f.write(html)
