@@ -83,6 +83,9 @@ def writePiecePage(d):
 	extra_images = ""
 	url_prefix = "https://plantmonster.net/art/"
 
+	if url_prefix.startswith("file://"):
+		html = html.replace('/artwork.css', '../artwork.css')
+
 	if 'info' in d:
 		desc = d['info']['description'].replace("\n", "</br>")
 		html = html.replace('REPLACE_DESCRIPTION', desc)
