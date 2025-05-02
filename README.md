@@ -13,7 +13,7 @@ Production version is viewable [here](https://art.plantmonster.net).
 
 ```
 {
-    "description": "description here"
+    "description": "description here",
     "license": "copyleft"
 }
 ```
