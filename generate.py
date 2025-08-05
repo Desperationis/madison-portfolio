@@ -50,7 +50,7 @@ def formEntry(d):
 	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://desperationis.github.io/madison-portfolio/pieces/' 
 	html1 += str(d["id"]) + '.html"'
 	html1 += 'data-lightbox="photos"><img class="img-fluid" src="'
-	html1 += 'https://https://desperationis.github.io/madison-portfolio/pieces/' + d["filename"] + '"></a></div>\n'
+	html1 += 'https://desperationis.github.io/madison-portfolio/pieces/' + d["filename"] + '"></a></div>\n'
 	d["html1"] = html1
 
 # Writes the main gallery view HTML document
@@ -65,7 +65,7 @@ def writeGalleryPage(data):
 
 	html = html.replace('REPLACE_GALLERY', gallery_html)
 
-	f = open('portfolio.html', 'w')
+	f = open('index.html', 'w')
 	f.write(html)
 	f.close()
 
