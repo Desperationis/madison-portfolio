@@ -47,7 +47,7 @@ def parseFile(f):
 
 def formEntry(d):
 	# Form html for gallery page
-	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://art.plantmonster.net/pieces/'
+	html1 = '<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://art.plantmonster.net/pieces/' 
 	html1 += str(d["id"]) + '.html"'
 	html1 += 'data-lightbox="photos"><img class="img-fluid" src="'
 	html1 += 'https://plantmonster.net/art/' + d["filename"] + '"></a></div>\n'
