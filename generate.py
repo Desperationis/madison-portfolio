@@ -98,7 +98,7 @@ def writePiecePage(d):
 			if d['info']['license'] == "copyleft":
 				pass
 			elif d['info']['license'] == "copyright":
-				license= '<p>Copyright &copy; ' + str(d['year']) + ' Jesse Kaukonen / Farstrider Oy. All rights reserved.</p>'
+				license= '<p>Copyright &copy; ' + str(d['year']) + ' Madison Luna. All rights reserved.</p>'
 		if 'title' in d['info']:
 			title_extra = d['info']['title']
 	else:

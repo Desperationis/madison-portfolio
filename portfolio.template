@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Jesse Kaukonen - Art portfolio</title>
+		<title>Madison Luna - Art portfolio</title>
 		<link href="bootstrap.min.css" rel="stylesheet">
 		<link href="lightbox.css" rel="stylesheet">
 		<link href="gallery.css" rel="stylesheet">
@@ -11,18 +11,13 @@
 		<div class="lightbox-gallery">
 			<div class="container">
 				<div class="intro">
-					<h2 class="text-center">Jesse Kaukonen - Art Portfolio</h2>
-                    <p class="text-center">I started practising art in 2023. This is a gallery showing my progress. <p class="text-center">For my novels, see <a href="https://farstrider.fi">Farstrider Publishing</a>.</p><p class="text-center">For my daytime job, see my <a href="https://jessekaukonen.net">professional software portfolio</a>.</p>
+					<h2 class="text-center">Madison Luna - Art Portfolio</h2>
+                    <p class="text-center">I started practising art in ___. This is a gallery showing my progress. <p class="text-center">For my main comic, see ______.</p><p class="text-center">.</p>
 				</div>
 				<div class="row photos">
 					REPLACE_GALLERY
 				</div>
 			</div>
-		<footer class="text-center text-lg-start bg-white text-muted">
-			<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-				<p>Source code for this gallery is available at <a href="https://github.com/SirDifferential/art-portfolio">https://github.com/SirDifferential/art-portfolio</a></p>
-			</div>
-		</footer>
 		</div>
 	</body>
 </html>
